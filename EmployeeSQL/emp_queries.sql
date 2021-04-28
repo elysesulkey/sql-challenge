@@ -50,4 +50,10 @@ ON dept_emp.dept_no = departments.dept_no
 WHERE dept_emp.dept_no = 'd007' 
 OR dept_emp.dept_no = 'd005';
 
---- Query 8: In descending order, list frequency count of employee last names, i.e., how many employees share each last name ---
+--- Query 8: In descending order, list frequency count of employee last names ---
+SELECT last_name,
+COUNT(last_name) AS "frequency_count"
+FROM employees
+GROUP BY last_name
+ORDER BY
+COUNT(last_name) DESC;
