@@ -1,10 +1,13 @@
-﻿DROP TABLE IF EXISTS departments CASCADE;
+﻿--- Drop Table if existing ---
+DROP TABLE IF EXISTS departments CASCADE;
 DROP TABLE IF EXISTS dept_emp;
 DROP TABLE IF EXISTS dept_manager;
 DROP TABLE IF EXISTS employees CASCADE;
 DROP TABLE IF EXISTS salaries;
 DROP TABLE IF EXISTS titles;
 
+--- Exported from QuickDBD: Specifiy datatypes, primary keys, and foreign keys ---
+--- Import files into table ---
 CREATE TABLE "departments" (
     "dept_no" VARCHAR   NOT NULL,
     "dept_name" VARCHAR   NOT NULL,
@@ -17,7 +20,7 @@ CREATE TABLE "dept_emp" (
     "emp_no" INT   NOT NULL,
     "dept_no" VARCHAR   NOT NULL,
     CONSTRAINT "pk_dept_emp" PRIMARY KEY (
-        "emp_no"
+        "emp_no","dept_no"
      )
 );
 
@@ -76,6 +79,7 @@ REFERENCES "titles" ("title_id");
 ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
+--- Query tables to confirm data ---
 SELECT * FROM departments;
 SELECT * FROM dept_emp;
 SELECT * FROM dept_manager;
