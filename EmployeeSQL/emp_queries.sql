@@ -1,0 +1,31 @@
+--- Query 1: For each employee: employee number, last name, first name, sex, salary ---
+SELECT employees.emp_no, employees.last_name, employees.first_name, employees.sex, salaries.salary
+FROM employees
+JOIN salaries
+ON employees.emp_no = salaries.emp_no;
+
+--- Query 2: List first name, last name, hire date for employees hired in 1986 ---
+SELECT first_name, last_name, hire_date 
+FROM employees
+WHERE hire_date BETWEEN '1986-01-01' AND '1987-01-01'
+
+--- Query 3: List manager of each department with: department number, department name, manager's employee number, last name, first name ---
+SELECT departments.dept_no, departments.dept_name, dept_manager.emp_no, employees.last_name, employees.first_name
+FROM departments
+JOIN dept_manager
+ON departments.dept_no = dept_manager.dept_no
+JOIN employees
+ON dept_manager.emp_no = employees.emp_no;
+
+--- Query 4: List department of each employee with: employee number, last name, first name, department name ---
+
+
+--- Query 5: List first name, last name, sex for employees whose first name is "Hercules" and last names begin with "B" ---
+
+
+--- Query 6: List all employees in Sales department, including: employee number, last name, first name, department name ---
+
+
+--- Query 7: List all employees in Sales and Development departments, including: employee number, last name, first name, department name ---
+
+--- Query 8: In descending order, list frequency count of employee last names, i.e., how many employees share each last name ---
