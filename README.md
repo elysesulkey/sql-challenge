@@ -1,5 +1,5 @@
 # sql-challenge
-This repository is a research project on employees of Pewlett Hackard from the 1980s and 1990s. Starting with six CSV files, QuickDBD was used to sketch out an ERD of the tables. The table schema was then imported into a PGadmin database with specified data types, primary keys, foreign keys, and other constraints. If a table did not have a unique column to be a primary key, a composite key was created. 
+This repository is a research project on employees of Pewlett Hackard from the 1980s and 1990s. Starting with six CSV files, QuickDBD was used to sketch out an ERD of the tables. The table schema was then imported into an SQL database with specified data types, primary keys, foreign keys, and other constraints. If a table did not have a unique column to be a primary key, a composite key was created. 
 
 After importing the original CSV files, the following queries were run in the completed database:
  1. List the following details of each employee: employee number, last name, first name, sex, and salary.
